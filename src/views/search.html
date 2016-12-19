@@ -1,0 +1,332 @@
+
+  <main class="search_main">
+  <section class="container movies">
+
+    <h1>봤어요 목록</h1>
+    <p>입력하신 <span>팀버튼</span>의 검색 결과입니다.</p>
+    <div class="movie-list">
+      <figure class="top-1">
+        <img src="img/photo-main-poster-2.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+            <!-- <div id="star_rating"> -->
+            <form novalidate class="star-rating-form" action="#" id="star_rating">
+             <input value="null" id="cencel" checked type="radio" name="rating" >
+              <label for="cencel">
+                <span>취소</span>
+                <button type="button" name="button" class="close-btn">
+                  취소
+                </button>
+              </label>
+
+              <input value="0.5" id="star1"
+                type="radio" name="rating" >
+              <label for="star1" class="star1">
+                <span >0.5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+                </svg>
+              </label>
+
+              <input value="1" id="star2"
+                type="radio" name="rating" >
+              <label for="star2"  class="star2">
+                <span >1점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+                </svg>
+              </label>
+
+              <input value="1.5" id="star3"
+                type="radio" name="rating" >
+              <label for="star3">
+                <span >1.5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+                </svg>
+              </label>
+
+              <input value="2" id="star4"
+                type="radio" name="rating" >
+              <label for="star4"  class="star4">
+                <span >2점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+                </svg>
+              </label>
+
+
+              <input value="2.5" id="star5"
+                type="radio" name="rating" >
+              <label for="star5">
+                <span >2.5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+                </svg>
+              </label>
+
+              <input value="6" id="star6"
+                type="radio" name="rating" >
+              <label for="star6"  class="star6">
+                <span >3점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+                </svg>
+              </label>
+
+              <input value="7" id="star7"
+                type="radio" name="rating" >
+              <label for="star7">
+                <span >3.5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+                </svg>
+              </label>
+
+              <input value="8" id="star8"
+                type="radio" name="rating" >
+              <label for="star8"  class="star8">
+                <span >4점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+                </svg>
+              </label>
+
+              <input value="9" id="star9"
+                type="radio" name="rating" >
+              <label for="star9">
+                <span >4.5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+                </svg>
+              </label>
+
+              <input value="10" id="star10"
+                type="radio" name="rating" >
+              <label for="star10">
+                <span >5점</span>
+                <svg width="13px" height="26px">
+                  <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+                </svg>
+              </label>
+
+              <button type="submit" class="submit">평가하기</button>
+              <output></output>
+            </form>
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2">
+        <img src="img/photo-main-poster-3.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-2">
+        <img src="img/photo-main-poster-4.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-2">
+        <img src="img/photo-main-poster-5.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-3">
+        <img src="img/photo-main-poster-1.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-3">
+        <img src="img/photo-main-poster-2.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-4">
+        <img src="img/photo-main-poster-3.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-4">
+        <img src="img/photo-main-poster-4.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-5">
+        <img src="img/photo-main-poster-5.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-5">
+        <img src="img/photo-main-poster-1.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-5">
+        <img src="img/photo-main-poster-1.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-6">
+        <img src="img/photo-main-poster-3.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-7">
+        <img src="img/photo-main-poster-4.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-7">
+        <img src="img/photo-main-poster-5.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-8">
+        <img src="img/photo-main-poster-1.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-8">
+        <img src="img/photo-main-poster-2.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-9">
+        <img src="img/photo-main-poster-3.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-9">
+        <img src="img/photo-main-poster-4.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-1 left-10">
+        <img src="img/photo-main-poster-5.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+      <figure class="top-2 left-10">
+        <img src="img/photo-main-poster-1.png" alt="">
+        <div class="hover">
+          <p>신비한 동물사전</p>
+          <div class="stars">
+
+          </div>
+          <button type="button" class="want-btn"><img src="./img/icon-heart.svg" alt="보고싶어요">보고싶어요</button>
+          <button type="button" class="comment-btn"><img src="./img/icon-comment.svg" alt="코멘트">코멘트 쓰기</button>
+        </div>
+      </figure>
+    </div>
+</section>
+</main>

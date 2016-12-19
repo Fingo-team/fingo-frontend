@@ -1,0 +1,144 @@
+/*! main.sass © FINGO - heoyunjee, 2016 */
+//
+// * ---------------------------------------
+// * MODULES - reset, normalize, customize
+// * ---------------------------------------
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-config
+@import ./config/fingo-reset
+
+input
+  @extend %reset-border-box
+button
+  @extend %reset-button
+
+
+.comment-dim-container
+  &.show
+    display: block
+  &.hide
+    display: none
+
+  .dim,
+  .dim2
+    +position(fixed, top 0 left 0 right 0 bottom 0 z-index 100000)
+    background: rgba($fingo-bg-dark, 0.8)
+    &.hide
+      display: none
+  .dim2
+    background: rgba($fingo-bg-dark, 0.7)
+
+  // .modal-window
+  .modal-window
+    +position(fixed, top 50% left 50%)
+    +background(color #222)
+    +size(620px 310px)
+    +padding(top 20px left 30px right 30px bottom 20px)
+    text-align: left
+    // align-items: center
+    border-radius: 5px
+    transform: translate(-50%, -50%)
+    box-shadow: 0 0 20px 2px hsla(0,0%,0%,.45)
+    z-index: 100010
+    &.hide
+      display: none
+
+    > *
+      margin: 0
+    .modal-headline
+      +padding(bottom 10px)
+      display: inline-block
+      position: relative
+      color: $fingo-white
+      font-size: 18px
+    .modal-rank-btn
+      +margin(left 10px)
+      +size(20px)
+      outline: 0
+      &::before
+        content: ''
+        +size(10px)
+        +position(relative, top -2px)
+        display: block
+        transform: rotate(-135deg)
+        border:
+          top: 2px solid $fingo-main-color
+          left: 2px solid $fingo-main-color
+    .modal-contents
+      +padding(top 20px left 100px)
+      border-top: 1px solid rgba($fingo-white, 0.3)
+      .modal-poster
+        +position(absolute, left 30px)
+        +size(80px 115px)
+      .modal-stars
+        color: $fingo-white
+      .modal-textarea
+        +margin(top 10px)
+        +size(100% 130px)
+        +background(color #222)
+        font-size: 14px
+        color: $fingo-white
+        border: 0
+        outline: 0
+      .modal-ok-button
+        +size(100px 40px)
+        +position(absolute, bottom 20px right 30px)
+        +background(color $fingo-bg-dark)
+        line-height: 40px
+        border-radius: 5px
+        color: $fingo-white
+        font-size: 16px
+        &:hover
+          +background(color $fingo-main-color)
+    .modal-close-button
+      +position(absolute, top 20px right 30px)
+      +size(30px)
+      line-height: 14px
+      color: #555
+      font-size: 30px
+      &:hover
+        @extend %focus-state
+  .modal-rank-window
+    &.hide
+      display: none
+    .modal-rank-contents
+      +position(absolute, top 55px left 30px z-index 10000000)
+      +size(220px 230px)
+      +padding(top 20px bottom 20px left 30px right 30px)
+      +background(color #000)
+      box-shadow: 0 0 0 6px rgba($fingo-main-color, 0.3)
+      text-align: center
+      border: 1px solid #000
+      border-radius: 5px
+      color: $fingo-white
+      &::before
+        content: ''
+        +position(absolute, top -6px right 75px)
+        +size(0)
+        border-left: 6px solid transparent
+        border-right: 6px solid transparent
+        border-bottom: 7px solid #000
+      &.hide
+        display: none
+      h4
+        +padding(bottom 10px)
+        font-size: 14px
+        color: #cacaca
+        border-bottom: 1px solid #444
+      p
+        +margin(top 20px bottom 7px)
+        font-size: 14px
+        color: #cacaca
+        font-weight: lighter
+      button
+        +size(100px 35px)
+        border: 1px solid $fingo-white
+        color: $fingo-white
+        line-height: 33px
+        &.active
+          +background(color $fingo-heart)
+          border: 1px solid $fingo-heart
+        &:hover
+          +background(color $fingo-heart)
+          border: 1px solid $fingo-heart

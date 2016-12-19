@@ -1,0 +1,45 @@
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+// * --------------------------------
+// * Footer
+// * --------------------------------
+.footer
+  +size(100% 150px)
+  background: $fingo-bg-dark
+  color: $fingo-white
+  a
+    color: $fingo-white
+  .container
+    padding-top: 40px
+    .footer-logo
+      float: left
+      margin-right: 50px
+    .footer-copyright
+      +position(relative, top 5px)
+      width: 250px
+      float: left
+      p
+        font-size: 14px
+      span
+        font-size: 12px
+        font-weight: lighter
+  .footer-sns-group
+    float: right
+    a
+      +size(45px)
+      +margin(left 15px)
+      position: relative
+      display: inline-block
+      background: $fingo-font-33
+      border-radius: 50%
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    .footer-sns-facebook
+      &:hover
+        background: #203571
+    .footer-sns-twitter
+      &:hover
+        background: #30758b

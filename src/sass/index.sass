@@ -1,0 +1,25 @@
+// fingo - index.sass
+
+// * --------------------------------
+// * Import
+// * --------------------------------
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-config
+@import ./config/fingo-reset
+@import ./config/fingo-grid-system
+
+div, input
+  @extend %reset-border-box
+
+button
+  @extend %reset-button
+
+.a11y
+  @extend %a11y
+
+
+// * --------------------------------
+// * Nav
+// * --------------------------------
+@import ./navbar

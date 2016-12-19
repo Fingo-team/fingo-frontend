@@ -1,0 +1,48 @@
+<div data-ng-include="'views/index-nav.html'"></div>
+<main class="main">
+  <div class="sign-up container">
+    <h1>회원가입</h1>
+    <form>
+      <label for="email" class="a11y">이메일 주소</label>
+      <input id="email" type="email" title="회원가입 이메일 주소 입력" placeholder="이메일 주소" ng-model="email" required>
+      <label for="name" class="a11y">이름</label>
+      <input id="name" type="text" title="회원가입 이름 입력" placeholder="이름" ng-model="nickname" required>
+      <label for="password" class="a11y">비밀번호 6자 이상</label>
+      <input id="password" type="password" title="회원가입 비밀번호 입력" placeholder="비밀번호(6자 이상)" ng-model="pw" required>
+      <!-- <input id="policy" type="checkbox" required> -->
+      <!-- <label for="policy" class="policy">FINGO 서비스 이용 약관에 동의합니다.</label> -->
+      <p aria-checked="true" class="policy" role="checkbox" tabindex="0"><span>FINGO 서비스 이용 약관에 동의합니다.</span></p>
+      <button ng-click="Signup()">등록하기</button>
+    </form>
+    <div class="facebook-signup">
+      <p>페이스북 아이디가 있다면</p>
+      <button ng-click="FBLogin()">facebook으로 1초만에 가입</button>
+    </div>
+  </div>
+</main>
+
+<script>
+var checkbox = document.querySelector('p[role=checkbox]');
+console.log(checkbox);
+
+checkbox.addEventListener('click', function() {
+  if (this.getAttribute('aria-checked') === 'true') {
+      this.setAttribute('aria-checked', 'false');
+  } else {
+    // 그렇지 않으면 true로 변경
+    this.setAttribute('aria-checked', 'true');
+  }
+});
+
+checkbox.addEventListener('keydown', function(e) {
+  if(e) { e.preventDefault(); }
+  if (e.keyCode == '32') {
+    if (this.getAttribute('aria-checked') === 'true') {
+      this.setAttribute('aria-checked', 'false');
+    } else {
+      this.setAttribute('aria-checked', 'true');
+    }
+  }
+});
+
+</script>

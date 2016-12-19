@@ -1,0 +1,142 @@
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+
+label
+  font-size: 16px
+
+.stars
+  text-align: center
+  +size(150px 36px)
+  +margin(top 40px bottom 55px left auto right auto)
+  +mobile
+    +size(230px 38px)
+    +margin(top 60px bottom 80px)
+
+  .cancel-btn-color-active
+    color: #999
+
+  .star-rating-form
+    svg
+  	  width: 13px
+  	  height: 36px
+      // +size(13px 36px)
+  	  fill: currentColor
+      +background(color #000)
+      // +mobile
+      //   // background: #000
+      //   width: 33px
+      // 	height: 56px
+
+
+
+  .star-rating-form label,
+  	display: block
+  	float: left
+  	font-size: 16px
+  	color: #e7ae5a
+  	cursor: pointer
+
+  // .star-rating-form label::before
+  // 	content: ""
+  //   display: block
+  //   clear: both
+
+  .star-rating-form
+    position: relative
+
+    .star2 svg,
+    .star4 svg,
+    .star6 svg,
+    .star8 svg
+      margin-right: 5px
+
+    output
+      color: #fff
+      font-size: 16px
+      +position(absolute, top -30px left 0px)
+      border-radius: 5px
+      opacity: 1
+    >button
+      position: absolute
+      top: -999px
+      left: 0px
+      height: 40px
+      border-radius: 2px
+      background: rgba(#161616, 0.9)
+      color: #fff
+      border: 1px solid #161616
+
+    input
+      +size(0)
+      +position(absolute, top -5px left 0 z-index -10)
+      opacity: 0
+
+    label
+      .cancel-btn
+        position: absolute
+        top: 40px
+        left: 50%
+        transform: translateX(-50%)
+        width: 50px
+        height: 30px
+        border-radius: 2px
+        background: rgba(#161616, 0.9)
+        color: #fff
+        border: 1px solid #161616
+        opacity: 0
+      .cancel-btn-active
+        opacity: 1
+
+    label button:hover
+      border: 1px solid #ddd
+
+    label:last-child
+      margin-right: 0px
+
+    label
+      height: 36px
+      span
+        position: absolute
+        top: 30px
+        // left: 1
+        opacity: 0
+      &:hover span
+        opacity: 1
+        font-size: 14px
+        +background(color rgba(#161616, 0.9))
+        color: #fff
+        border-radius: 5px
+        border: 1px solid #161616
+        // display: block
+        padding: 5px
+
+  //input:checked 시에 label 선택
+  .star-rating-form input:checked ~ label
+  	color: #999
+
+  .star-rating-form input:checked + label
+  	color: #e7ae5a
+
+  .star-rating-form button:checked label
+  	color: #999
+
+  .star-rating-form input:focus + label
+
+  .star-rating-form:hover input + label
+  	color: #e7ae5a
+
+  .star-rating-form input:hover ~ label,
+  .star-rating-form input[id="cancel"] + label
+  	color: #999
+
+  .star-rating-form input:hover + label,
+  	color: #e7ae5a
+
+  .star-rating-form input[id="cancel"]:checked + label
+  	color: #999
+
+  .star-rating-form [type="submit"]
+  	float: none
+
+  .submit
+    opacity: 0

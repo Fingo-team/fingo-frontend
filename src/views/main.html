@@ -1,0 +1,28 @@
+ <div data-ng-controller="FingoSearchController">
+    <div data-ng-include="'views/navbar.html'"></div>
+  </div>
+  <header class="main-header" data-ng-controller="FingoBoxOfficeDetailController">
+    <div data-fingo-header-carousel></div>
+  </header>
+  <main class="main-main">
+    <section class="main-box-office" data-ng-controller="FingoBoxOfficeController">
+      <div class="container">
+        <h1>BOX OFFCE</h1>
+        <p class="main-box-office-desc">오늘의 박스 오피스 순위 입니다.</p>
+        <div data-fingo-box-office-list></div>
+        <div data-fingo-box-office-carousel></div>
+      </div>
+    </section>
+    <section class="main-movie-ranking" data-ng-controller="FingoMovieRankingController">
+      <div class="container">
+        <h1 class="a11y">영화 순위</h1>
+        <div class="main-movie-ranking-btn-group">
+          <button type="button" class="active">국내 누적관객수 TOP 영화</button><button type="button">전문가 고평점 영화</button>
+        </div>
+        <div data-fingo-movie-ranking-carousel></div>
+      </div>
+    </section>
+  </main>
+</div>
+<div data-ui-view></div>
+<div data-ng-include="'views/footer.html'"></div>

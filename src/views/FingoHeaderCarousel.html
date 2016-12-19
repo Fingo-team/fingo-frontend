@@ -1,0 +1,26 @@
+<div id="main-header-carousel" class="main-header-carousel">
+  <ul>
+    <li data-ng-repeat="movie in fingo_boxoffice_detail"><a href></a></li>
+  </ul>
+  <div>
+    <figure
+      data-ng-repeat="movie in fingo_boxoffice_detail"
+      data-ng-init="$last && repeatComplete()">
+      <img data-ng-src="{{movie.movie.stillcut[0].img}}" alt="{{movie.movie.title}} 스틸컷 이미지">
+      <div class="container">
+        <div class="main-header-carousel-contents">
+          <h3><a href="">{{movie.movie.title}}</a></h3>
+          <p>평균 별점 : {{movie.movie.score}} , 예매율 : 66.11%</p>
+          <span>{{movie.movie.first_run_date | getYear}}, </span><span data-ng-repeat="genre in movie.movie.genre">{{genre.name}}, </span><span>12세 관람가, 2시간 13분</span>
+          <p class="header-carousel-actor">
+            배우 : <span data-ng-repeat="actor in movie.movie.actors">{{actor.actor.name}}<span>, </span></span>
+          </p>
+          <p class="header-carousel-director">
+            감독 : <span data-ng-repeat="director in movie.movie.director">{{director.name}}<span>, </span></span>
+          </p>
+          <a href="#" data-ng-click="$event.preventDefault();">예매하기</a>
+        </div>
+      </div>
+    </figure>
+  </div>
+</div>

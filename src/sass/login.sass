@@ -1,0 +1,98 @@
+// fingo - login.sass
+//
+// * --------------------------------
+// * RESET
+// * --------------------------------
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-config
+@import ./config/fingo-reset
+@import ./config/fingo-grid-system
+
+div, input
+  @extend %reset-border-box
+
+input
+  +background(color $fingo-white)
+
+button
+  @extend %reset-button
+
+.a11y
+  @extend %a11y
+
+body
+  +background(image url('../images/photo-index-bg.jpg') position center repeat no-repeat size cover)
+
+.main
+  +size(100% 100vh)
+  position: relative
+  .login
+    +size(300px auto)
+    +position(absolute, top 50% left 50%)
+    transform: translate(-50%, -50%)
+    text-align: center
+    +tablet
+      +size(400px auto)
+    +desktop
+      +size(400px auto)
+
+    h1
+      +margin(bottom 45px)
+      font-size: 28px
+      color: $fingo-white
+      +desktop
+        font-size: 26px
+
+    form
+      label
+        @extend %a11y-hidden
+      input
+        +size(300px 60px)
+        +padding(left 30px)
+        +margin(bottom 15px)
+        border: none
+        border-radius: 5px
+        +tablet
+          +size(400px 60px)
+        +desktop
+          +size(400px 60px)
+      button
+        +margin(top 35px)
+        +size(210px 50px)
+        +background(color $fingo-main-color)
+        line-height: 50px
+        color: $fingo-white
+        font-size: 16px
+        +desktop
+          font-size: 15px
+    > p
+      +margin(top 10px)
+      display: inline-block
+      border-bottom: 1px solid $fingo-font-ad
+      a, span
+        color: $fingo-font-ad
+        font-size: 16px
+        transition: 0.4s all
+        +desktop
+          font-size: 14px
+
+      a:hover
+        color: $fingo-white
+    .facebook-login
+      border-top: 1px solid rgba($fingo-white, 0.15)
+      +margin(top 40px)
+      +padding(top 40px)
+      p
+        color: $fingo-font-ad
+        font-size: 16px
+        transition: 0.4s all
+        +desktop
+          font-size: 14px
+      button
+        +margin(top 10px)
+        +size(210px 50px)
+        +background(color #203571)
+        line-height: 50px
+        color: #fff
+        font-size: 16px

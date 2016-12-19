@@ -1,0 +1,22 @@
+<div data-ng-include="'views/index-nav.html'"></div>
+<main class="main">
+  <div class="login container">
+    <h1>로그인</h1>
+    <form>
+      <label for="">이메일주소</label>
+      <input type="email" placeholder="이메일 주소" required title="이메일 주소" ng-model="email">
+      <label for="">비밀번호</label>
+      <input type="password" placeholder="비밀번호" required title="비밀번호" ng-model="pw">
+      <button ng-click="Login()">로그인</button>
+    </form>
+    <p>
+      <a href="#">비밀번호 찾기</a>
+      <span>/</span>
+      <a href="#">회원가입하기</a>
+    </p>
+    <div class="facebook-login" data-ng-controller="FBLoginController">
+      <p>이미 페이스북으로 가입하셨다면</p>
+      <button ng-click="FBLogin()">facebook 로그인</button>
+    </div>
+  </div>
+</main>

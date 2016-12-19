@@ -1,0 +1,49 @@
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+
+// * --------------------------------
+// * Header
+// * --------------------------------
+header
+  +size(100% 450px)
+  color: #fff
+  +background(image url('../images/sub-bg-img.png') position center center repeat no-repeat size cover)
+  .profile
+    height: 450px
+    text-align: center
+    .account
+      position: relative
+      // display: inline-block
+      +padding(top 200px)
+      text-align: center
+      h1
+        @extend %a11y-hidden
+      .thumbnail
+        img
+          +size(75px 75px)
+      p
+        font-size: 18px
+        +margin(top 10px)
+    section:nth-child(2), section:nth-child(3)
+      display: inline-block
+    .total-movies
+      +position(relative, top -95px left -50px)
+      // +margin(top -80px  left 200px)
+      h1
+        +position(relative, top 40px left 0)
+        font-size: 12px
+      strong
+        font-size: 16px
+        font-weight: normal
+
+    .received-likes
+      +position(relative, top -95px right -50px)
+      // +margin(top -48px  right 200px)
+      h1
+        +position(relative, top 40px left 0)
+        font-size: 12px
+      img
+        +position(relative, top 5px left 0)
+      strong
+        font-size: 16px
+        font-weight: normal

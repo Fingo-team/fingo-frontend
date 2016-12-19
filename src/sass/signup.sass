@@ -1,0 +1,86 @@
+// fingo - signup.sass
+//
+// * --------------------------------
+// * RESET
+// * --------------------------------
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-config
+@import ./config/fingo-reset
+@import ./config/fingo-grid-system
+
+div, input
+  @extend %reset-border-box
+
+input
+  +background(color $fingo-white)
+
+button
+  @extend %reset-button
+
+.a11y
+  @extend %a11y
+
+body
+  +background(image url('../images/photo-index-bg.jpg') position center repeat no-repeat size cover)
+
+.main
+  +size(100% 100vh)
+  position: relative
+  color: $fingo-white
+  .sign-up
+    +size(400px auto)
+    +position(absolute, top 50% left 50%)
+    transform: translate(-50%, -50%)
+    text-align: center
+    h1
+      +margin(bottom 45px)
+      font-size: 26px
+    button
+      +size(210px 50px)
+      +margin(top 10px)
+      +background(color $fingo-main-color)
+      font-size: 16px
+      color: #fff
+      line-height: 50px
+    form
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+        +size(400px 60px)
+        +padding(left 30px)
+        +margin(bottom 15px)
+        border-radius: 5px
+        border: 0
+      .policy
+        +margin(bottom 40px)
+        text-align: left
+        font-size: 14px
+        cursor: pointer
+        &::before
+          content: '\2713'
+          +margin(top 5px)
+          +size(20px)
+          +margin(right 10px)
+          display: inline-block
+          border-radius: 50%
+          text-align: center
+          color: transparent
+          border: 1px solid $fingo-white
+      [aria-checked="true"],
+      [data-class="check"]
+        &::before
+          content: '\2713'
+          +background(color $fingo-white)
+          color: $fingo-bg-dark
+
+
+    .facebook-signup
+      p
+        +margin(top 40px)
+        +padding(top 40px)
+        color: $fingo-font-ad
+        border-top: 1px solid rgba($fingo-white, 0.15)
+        font-size: 14px
+      button
+        +background(color #203571)

@@ -1,0 +1,168 @@
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+// * --------------------------------
+// * Nav
+// * --------------------------------
+.nav-active
+  +background(color rgba($fingo-bg-dark, 0.85))
+.nav
+  +position(fixed, z-index 100000)
+  +size(100% 100px)
+
+  .container
+    position: relative
+    > h1
+      display: inline-block
+      +margin(top 20px)
+      span
+        @extend %a11y-hidden
+  .nav-contents
+    // display: none
+    .main-menu-btn
+      display: none
+      +tablet
+        display: block
+        +position(absolute, top 40px right 0px)
+        z-index: 30
+
+      +mobile
+        display: block
+        +position(absolute, top 40px right 0px)
+        z-index: 30
+
+      button
+        +size(100% auto)
+        span
+          display: block
+          +size(30px 1px)
+          +background(color $fingo-white)
+          +margin(bottom 5px)
+          transition: all 0.3s
+    .main-menu-btn-active span:nth-child(2),
+    .main-menu-btn-active span:nth-child(3)
+      opacity: 0
+    .main-menu-btn-active span:nth-child(1)
+      transform: translateY(10px) rotate(45deg) scale(1.4)
+    .main-menu-btn-active span:nth-child(4)
+      transform: translateY(-8px) rotate(-45deg) scale(1.4)
+
+  ul
+    +position(absolute, top 0 left 135px)
+    z-index: 20
+    transition: 0.5s all
+    +tablet
+      +size(120% 450px)
+      +position(absolute, top -450px left -10%)
+      text-align: center
+      background: rgba(#1e1e1e, 0.9)
+
+    +mobile
+      +size(120% 450px)
+      +position(absolute, top -450px left -10%)
+      text-align: center
+      background: rgba(#1e1e1e, 0.9)
+
+
+
+    li
+      display: inline-block
+      +tablet
+        display: block
+        +position(relative, top 80px)
+      +mobile
+        display: block
+        +position(relative, top 80px)
+
+      a
+        display: line-block
+        font-size: 16px
+        +margin(right 40px)
+        color: $fingo-white
+        line-height: 100px
+        position: relative
+        transition: all 0.3s
+        font-weight: normal
+        +tablet
+          font-size: 25px
+          +margin(right 0px)
+          font-weight: lighter
+        +mobile
+          font-size: 25px
+          +margin(right 0px)
+          font-weight: lighter
+        &:hover
+          +tablet
+            color: $fingo-main-color
+          +mobile
+            color: $fingo-main-color
+        &::after
+          content: ""
+          display: block
+          +size(100% 2px)
+          +background(color $fingo-main-color)
+          +position(absolute,top 20px left 0px)
+          transition: all 0.3s
+          transform: scaleX(0)
+          +tablet
+            display: none
+          +mobile
+            display: none
+
+
+        &:hover::after
+          transform: scaleX(1)
+  .main-menu-active
+    +position(absolute, top 0px left -10%)
+  form
+    +position(absolute, top 33px right 133px)
+    +tablet
+      +position(absolute, top 33px right 200px)
+    +mobile
+      +position(absolute, top 33px right 155px)
+    label
+      @extend %a11y-hidden
+    input
+      +size(350px 35px)
+      border: 1px solid $fingo-border
+      transition: 0.3s all
+      &:hover,
+      &:focus
+        border: 1px solid #ddd
+      +tablet
+        +size(300px 35px)
+      +mobile
+        +size(200px 35px)
+      +padding(left 20px)
+      +background(color rgba(#161616, 0.5))
+      border-radius: 50px
+      color: $fingo-font-dd
+      position: relative
+    button
+      +position(absolute, top 7px right 20px)
+
+  .profile-menu
+    +position(absolute, top 28px right 0)
+    +tablet
+      +position(absolute, top 33px right 70px)
+    +mobile
+      +position(absolute, top 33px right 50px)
+    &::after
+      content: ""
+      display: block
+      +size(100% 2px)
+      +background(color $fingo-main-color)
+      +position(absolute,top 50px left 0px)
+      transition: all 0.3s
+      transform: scaleX(0)
+    &:hover::after
+      transform: scaleX(1)
+    h1
+      @extend %a11y-hidden
+    p
+      display: inline-block
+      line-height: 42px
+      color: $fingo-white
+      +margin(right 15px)
+      font-style: 16px
+    img
+      +size(42px 42px)

@@ -1,0 +1,9 @@
+<div class="main-box-office-list">
+  <span>영화랭킹</span>
+  <button type="button" aria-label="영화 박스오피스 랭킹 리스트 펼치기"></button>
+  <ul>
+    <li data-ng-repeat="movie in fingo_movies">
+      <a href="" title="{{movie.rank}}위 {{movie.movie.title}}"><span>{{movie.rank}}위</span>{{movie.movie.title}}</a>
+    </li>
+  </ul>
+</div>

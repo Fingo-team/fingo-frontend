@@ -1,0 +1,273 @@
+// fingo - main-info.sass
+//
+// * --------------------------------
+// * RESET
+// * --------------------------------
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+
+
+input, .nav
+  @extend %reset-border-box
+input
+  @extend %reset-input
+// reset
+button
+  @extend %reset-button
+
+// body
+  // overflow-y: hidden
+// .movie-info-on:checked ~ body
+//   overflow-y: none
+
+
+.dim-movie-info
+  // display: none
+  position: fixed
+  top: 0
+  left: 0
+  +size(100% 100vh)
+  overflow: scroll
+  // overflow-y: hidden
+  z-index: 1000
+
+.dim-movie-info.hide
+  display: none
+
+.dim-movie-info.active
+  display: block
+.dim-movie-bg
+  width: 100%
+  height: 100vh
+  position: fixed
+  top: 0
+  left: 0
+  +background(color rgba(#161616, 0.7))
+  z-index: 1000
+.movie-info
+  position: absolute
+  top: 100px
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 10000
+  box-shadow: 0px 0px 30px #161616
+  // overflow: scroll
+  overflow: hidden
+  border-radius: 10px
+
+  +size(940px auto)
+  +background(color #222)
+  +margin(top 50px bottom 50px left auto right auto)
+  .steel-cut-carousel
+    +size(940px 300px)
+    position: relative
+    .ui-carousel-button-group
+      +size(940px 300px)
+      position: absolute
+      button::before
+        content: ''
+        position: absolute
+        width: 20px
+        height: 20px
+        transition: all 0.2s ease-in-out
+        z-index: 111
+      .ui-carousel-prev-button::before
+        top: 50%
+        left: 4%
+        transform: translateY(-50%) rotate(-45deg)
+        border-top: 3px solid #8b8b8b
+        border-left: 3px solid #8b8b8b
+      .ui-carousel-next-button::before
+        top: 50%
+        right: 4%
+        transform: translateY(-50%) rotate(135deg)
+        border-top: 3px solid #8b8b8b
+        border-left: 3px solid #8b8b8b
+    .steel-cut
+      // +padding(top 300px)
+      position: relative
+      .steel-cut-list
+        overflow: hidden
+        +position(absolute, top 0 left 0)
+        +size(100% 300px)
+        img
+          +size(940px auto)
+  .movie-section-01
+    // background-color: #111
+    +size(640px 250px)
+    +margin(left 270px)
+    h1
+      +padding(top 25px bottom 5px)
+      +margin(bottom 20px)
+      font-size: 26px
+      color: $fingo-font-dd
+      font-weight: bold
+      border-bottom: 1px solid #333
+    >p
+      font-size: 14px
+      color: $fingo-font-99
+    .poster
+      +size(220px 320px)
+      border: 3px solid #222
+      +position(absolute, top 210px left 30px)
+      img
+        +size(220px 320px)
+  section
+    h2
+      font-size: 14px
+      color: $fingo-font-dd
+      font-weight: bold
+      +margin(bottom 10px)
+  .movie-section-02
+    float: left
+    +size(630px auto)
+    +padding(top 25px left 30px right 30px)
+    // background-color: #111
+    border-top: 1px solid #333
+
+    p
+      font-size: 12px
+      color: $fingo-font-99
+  .movie-section-03
+    +padding(left 30px top 30px)
+    box-sizing: border-box
+    border-top: 1px solid #333
+    border-left: 1px solid #333
+    float: right
+    +size(250px 100%)
+    div
+      div
+        img
+          +size(50px 70px)
+          border-radius: 5px
+    // +position(absolute, top 550px right 0)
+    div
+      +margin(bottom 40px)
+      img
+        float: left
+        +margin(right 15px)
+      p
+        color: $fingo-font-dd
+
+        font-size: 14px
+        color: $fingo-font-dd
+    div::after
+      content: ""
+      display: block
+      clear: both
+    button
+      +size(200px 40px)
+      +background(color $fingo-bg-dark)
+      font-size: 14px
+      color: $fingo-font-dd
+  .movie-section-04
+    box-sizing: border-box
+    position: relative
+    width: 690px
+    float: left
+    +padding(left 30px top 50px bottom 40px)
+
+    h2
+      +margin(bottom 30px)
+    >div
+      // background-color: #111
+      +size(630px auto)
+      +margin(bottom 20px)
+      .profile
+        height: 100px
+        // background-color: #000
+        float: left
+        img
+          float: left
+          +margin(right 15px)
+      p
+        display: inline-block
+      .user-name
+        +margin(right 5px)
+        font-size: 14px
+        color: $fingo-font-dd
+      // .rating-stars
+      //   font-size: 12px
+      //   color: $fingo-main-color
+      //   display: inline-block
+      //   +margin(right 5px)
+        span
+      .comment
+        font-size: 14px
+        color: $fingo-font-dd
+        display: block
+      time
+        font-size: 12px
+        color: $fingo-font-99
+    button
+      +size(640px 40px)
+      +background(color $fingo-bg-dark)
+      font-size: 14px
+      color: $fingo-font-dd
+    >div::after
+      content: ""
+      display: block
+      clear: both
+// .rating-stars
+//   +margin(top 5px)
+.rating-stars
+  font-size: 12px
+  color: $fingo-main-color
+  display: inline-block
+  +margin(top 5px)
+  span
+    +margin(right 3px)
+  // span:last-child
+  //   display: inline-block
+  //   +margin(top -2px)
+.hover:hover
+  opacity: 1
+.hover
+  +position(absolute, top 0 z-index 10)
+  +size(100% 100%)
+  opacity: 0
+  cursor: pointer
+  background: rgba(#000000, 0.3)
+  text-align: center
+  .movie-info-click-on
+    +position(absolute, top 0 z-index 0)
+    +size(100% 100%)
+
+  p
+    +margin(top 55px)
+    font-size: 16px
+    color: $fingo-white
+    +mobile
+      font-size: 20px
+      +margin(top 90px)
+
+
+  .like-btn,
+  .heart-btn
+    +position(relative, z-index 10)
+    +margin(bottom 10px left auto right auto)
+    +size(110px 35px)
+    font-size: 14px
+    display: block
+    color: #fff
+    border: 1px solid currentColor
+    letter-spacing: -1px
+    +mobile
+      +size(180px 50px)
+      font-size: 16px
+    img:first-child
+      +size(16px 13px)
+      +margin(right 5px)
+      +mobile
+        +size(21px 19px)
+
+
+
+    &:nth-of-type(1):hover,
+    &:nth-of-type(1):active
+      +background(color $fingo-heart)
+      border: 1px solid $fingo-heart
+    &:nth-of-type(2):hover,
+    &:nth-of-type(2):active
+      +background(color #27569c)
+      border: 1px solid #27569c

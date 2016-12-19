@@ -1,0 +1,56 @@
+/*! fingo-grid-system.sass © heoyunjee, 2016 */
+
+$column-base-width: 252px !default
+$row-base-width: 355px !default
+$m-column-base-width: 370px !default
+$m-row-base-width: 525px !default
+
+$gutter-base-width: 20 !default
+$column-count: 25 !default
+$row-count: 2 !default
+$fluid: false !default
+
+@function top($n: 0)
+  $result: ($n * $row-base-width)
+  // + $gutter-base-width * ($n - 1)
+  @return $result
+
+@function m_top($n: 0)
+  $result: ($n * $m-row-base-width)
+  // + $gutter-base-width * ($n - 1)
+  @return $result
+
+@function left($n: 0)
+  $result: ($n * $column-base-width)
+  // + $gutter-base-width * ($n - 1)
+  @return $result
+
+@function m_left($n: 0)
+  $result: ($n * $m-column-base-width)
+  // + $gutter-base-width * ($n - 1)
+  @return $result
+
+/* top *
+@for $i from 1 through $row-count
+  .top-#{$i}
+    position: absolute !important
+    top: top($i - 1)
+
++mobile
+  @for $i from 1 through $row-count
+    .top-m-#{$i}
+      position: absolute !important
+      top: m_top($i - 1)
+
+/* left */
+@for $i from 1 through $column-count
+  .left-#{$i}
+    position: absolute !important
+    left: left($i - 1)
+
++mobile
+  @for $i from 1 through $column-count
+    .left-m-#{$i}
+      position: relative
+      // left: m_left($i - 1)
+      left: 0
