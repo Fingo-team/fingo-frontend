@@ -28,7 +28,7 @@ angular
           window.localStorage.clear();
           window.localStorage['key1'] = login.token;
           // main으로 이동
-          $state.go('main');
+          $state.go('main',{},{reload:true});
         });
       }
     };
