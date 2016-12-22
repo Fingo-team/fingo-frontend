@@ -1,4 +1,4 @@
-/*! movieListController.js © yamoo9.net, 2016 */
+/*! FingoMovieDetailController.js © joeun, 2016 */
 'use strict'
 
 // let angular = require('angular');
