@@ -72,7 +72,7 @@ $bp-tablet: 1024px
       +tablet
         top: 80%
       +mobile
-        top: 80%
+        top: 90%
     .ui-carousel-prev-button
       left: 30px
       +tablet
@@ -105,7 +105,7 @@ $bp-tablet: 1024px
     text-align: left
     +mobile
       +margin(left 0)
-      +position(absolute, top 65%)
+      +position(absolute, top 70%)
       width: 100%
     h3
       a
@@ -126,6 +126,8 @@ $bp-tablet: 1024px
     > p
       color: $fingo-white
       font-size: 16px
+      +mobile
+        display: none
     .header-carousel-actor
       > span:last-child
         > span
@@ -188,56 +190,11 @@ $bp-tablet: 1024px
     .ui-carousel-tabpanel
       +size(auto)
       position: relative
-      &:focus,
-      &:active,
-      &:hover
-        .hover
-          display: block
       .ui-carousel-image
         // +position(relative, z-index 1)
         +size(232px 335px)
         +mobile
           +size(100% auto)
-      .hover
-        +position(absolute, top 0 z-index 10)
-        +size(100%)
-        +padding(left 1.2em right 1.2em)
-        display: none
-        cursor: pointer
-        background: rgba(#000000, 0.85)
-        +mobile
-          +size(100% 100%)
-        h3
-          +margin(top 55px bottom 35px)
-          +padding(bottom 1em)
-          border-bottom: 1px solid rgba($fingo-main-color, 0.4)
-          font-size: 16px
-          +mobile
-            font-size: 30px
-        .stars
-          +margin(bottom 35px)
-        button
-          +margin(bottom 10px left auto right auto)
-          +size(100px 35px)
-          line-height: 32px
-          font-size: 14px
-          display: block
-          color: $fingo-white
-          border: 1px solid currentColor
-          &:nth-of-type(1)
-            &.active
-              +background(color $fingo-heart)
-              border: 1px solid $fingo-heart
-            &:hover
-              +background(color $fingo-heart)
-              border: 1px solid $fingo-heart
-          &:nth-of-type(2)
-            &.active
-              +background(color #27569c)
-              border: 1px solid #27569c
-            &:hover
-              +background(color #27569c)
-              border: 1px solid #27569c
 
 
 // * --------------------------------
@@ -387,15 +344,31 @@ $bp-tablet: 1024px
 .main-main
   .main-movie-ranking
     +size(100% auto)
-    +padding(bottom 200px)
+    +padding(top 115px bottom 200px)
     +background(color $fingo-bg-light)
+    text-align: center
     +mobile
       +size(100% auto)
+    h1
+      font-size: 20px
+      position: relative
+      &::after
+        content: ''
+        +position(absolute, bottom -20px left 50%)
+        +size(50px 1px)
+        transform: translateX(-50%)
+        display: block
+        background: #454545
+    .main-movie-ranking-desc
+      +margin(top 50px bottom 70px)
+      font-weight: lighter
+      +mobile
+        +margin(bottom 80px)
     .ui-carousel-tabpanel
       text-align: center
       +mobile
         +margin(right 20px)
-    .main-movie-ranking-btn-group
+    // .main-movie-ranking-btn-group
       +margin(bottom 40px left auto right auto)
       +padding(top 115px)
       +tablet

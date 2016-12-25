@@ -9,7 +9,7 @@
       <img data-ng-src="{{movie.movie.stillcut[0].img}}" alt="{{movie.movie.title}} 스틸컷 이미지">
       <div class="container">
         <div class="main-header-carousel-contents">
-          <h3><a href="">{{movie.movie.title}}</a></h3>
+          <h3><a href data-ui-sref="main.detail({'id': movie.movie.id})">{{movie.movie.title}}</a></h3>
           <p>평균 별점 : {{movie.movie.score}} , 예매율 : 66.11%</p>
           <span>{{movie.movie.first_run_date | getYear}}, </span><span data-ng-repeat="genre in movie.movie.genre">{{genre.name}}, </span><span>12세 관람가, 2시간 13분</span>
           <p class="header-carousel-actor">

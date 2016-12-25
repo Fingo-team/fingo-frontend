@@ -14,7 +14,6 @@ angular.module('FingoApp')
     .success(function(data, status, headers, config) {
     	if( data ) {
     		/* 성공적으로 결과 데이터가 넘어 왔을 때 처리 */
-        // console.log(data.data[0].movie.title);
         $scope.fingo_movies = data.data;
     	}
     	else {

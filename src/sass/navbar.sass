@@ -1,5 +1,8 @@
+/*! Navbar.sass © FINGO - joeun, 2016 */
+
 @import ./config/fingo-colors
 @import ./Modules/sass/style
+
 // * --------------------------------
 // * Nav
 // * --------------------------------
@@ -100,7 +103,7 @@
           display: block
           +size(100% 2px)
           +background(color $fingo-main-color)
-          +position(absolute,top 20px left 0px)
+          +position(absolute,top 25px left 0px)
           transition: all 0.3s
           transform: scaleX(0)
           +tablet
@@ -139,6 +142,8 @@
       position: relative
     button
       +position(absolute, top 7px right 20px)
+    +mobile
+      display: none
 
   .profile-menu
     +position(absolute, top 28px right 0)
@@ -166,3 +171,4 @@
       font-style: 16px
     img
       +size(42px 42px)
+      border-radius: 50px

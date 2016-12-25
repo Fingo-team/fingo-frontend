@@ -26,6 +26,7 @@ angular
 
         signup.$save().then(()=> {
           console.log('인증 메일이 발송되었습니다.');
+          window.alert('인증 메일이 발송되었습니다.');
           $state.go('login');
         });
       }

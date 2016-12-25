@@ -1,0 +1,94 @@
+<div class="dim-movie-info" ng-class="popup_show_active" >
+  <div class="dim-movie-bg" ng-click="popup_show(movie, 0, 'hide')"></div>
+  <div class="movie-info">
+    <div class="steel-cut-carousel">
+      <div class="ui-carousel-button-group">
+        <button type="button" name="button" class="ui-carousel-prev-button"></button>
+        <button type="button" name="button" class="ui-carousel-next-button"></button>
+      </div>
+      <div class="steel-cut">
+        <!-- data-ng-repeat="stillcut in fingo_movie_detail.stillcut"> -->
+        <figure class="steel-cut-list">
+          <img data-ng-src="{{fingo_movie_detail.stillcut[2].img}}" alt="">
+        </figure>
+      </div>
+    </div>
+    <section class="movie-section-01">
+      <h1>{{fingo_movie_detail.title}}</h1>
+      <figure class="poster" data-ng-controller="FingoMovieScoreController" data-ng-mouseover="getScore($event, movie_id)">
+        <img class="poster-img" data-ng-src="{{fingo_movie_detail.img}}" alt="">
+        <div class="hover">
+          <h3>{{fingo_movie_detail.title}}</h3>
+          <div data-fingo-movie-score-directive data-movie-id="movie_id" data-movie-score="currentScore"></div>
+
+          <button
+            type="button"
+            class="heart-btn"
+            data-ng-controller="FingoWishMoviesController"
+            data-ng-class="wish_active"
+            data-ng-click="WishMovies(movie_id); $event.preventDefault(); $event.stopPropagation();"
+          ><img src="./images/icon-heart.svg" class="icon">보고싶어요</button>
+          <!-- <button
+            type="button"
+            class="like-btn"
+            data-ui-sref="detail.comment({'id': movie_id})"
+            data-ng-click="$event.stopPropagation()"
+          ><img src="./images/icon-comment.svg" class="icon">코멘트 쓰기</button>-->
+        </div>
+      </figure>
+      <p>
+        <span data-ng-repeat="genre in fingo_movie_detail.genre">{{genre.name}} </span> |
+        <span data-ng-repeat="nation_code in fingo_movie_detail.nation_code">{{nation_code.name}}</span> |
+        <span>{{fingo_movie_detail.first_run_date | getYear}}</span>
+      </p>
+      <div class="rating-stars">
+        <span>[{{fingo_movie_detail.score}}]</span>
+      </div>
+      <div class="set-rating">
+      </div>
+    </section>
+    <section class="movie-section-02">
+      <h2>줄거리</h2>
+      <p>{{fingo_movie_detail.story}}</p>
+    </section>
+    <section class="movie-section-03" >
+      <div>
+        <h2>감독</h2>
+        <div class="director" data-ng-repeat="director in fingo_movie_detail.director">
+            <img data-ng-src="{{director.img}}" alt="감독 이미지">
+          <p>{{director.name}}</p>
+        </div>
+      </div>
+      <div>
+        <h2>주연</h2>
+        <div class="actor" data-ng-repeat="actors in fingo_movie_detail.actors | limitTo:length_item as results">
+          <img data-ng-src="{{actors.actor.img}}" alt="{{actors.role}} 역 {{actors.actor.name}}">
+          <p>{{actors.actor.name}}</p>
+          <p>{{actors.role}}</p>
+        </div>
+        <div ng-hide="fingo_movie_detail.actors.length <= length_item" >
+          <button type="button" name="button" data-ng-click="length_num(2)">더보기</button>
+        </div>
+      </div>
+    </section>
+    <section class="movie-section-04" >
+      <h2>코멘트</h2>
+      <div data-ng-repeat="results in fingo_movie_detail_comment.results | limitTo:comment_length_item as results">
+        <div class="profile">
+          <img src="./images/icon-profile.svg" data-ng-src="{{results.user.user_img_url}}" alt="프로필 이미지">
+        </div>
+        <p class="user-name">{{results.user.nickname}}</p>
+        <div class="rating-stars">
+          <span>[{{results.score}}]</span>
+        </div>
+        <p class="comment">{{results.comment}}</p>
+        <time>2016</time>
+      </div>
+      <div ng-hide="fingo_movie_detail_comment.results.length <= comment_length_item" >
+        <button type="button" name="button"  data-ng-click="comment_length_num(2)">더보기</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div data-ui-view></div>

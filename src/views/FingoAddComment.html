@@ -1,105 +1,23 @@
 <div class="comment-dim-container modal" data-ng-class="dim_class">
   <div class="dim" data-ng-click="dim_show('hide')"></div>
   <div class="modal-window modal">
-    <h3 class="modal-headline">{{fingo_title}}</h3>
-    <button class="modal-rank-btn" aria-label="별점 남기기" data-ng-click="dim2_show('show')"></button>
+    <h3 class="modal-headline">{{fingo_title}}<button class="modal-rank-btn" aria-label="별점 남기기 버튼" data-ng-click="dim2_show('show')"></button></h3>
     <div class="modal-contents">
       <img class="modal-poster" src="{{fingo_img}}">
-      <span class="modal-stars">{{fingo_score}}</span>
+      <span class="modal-stars">[{{fingo_score}}]</span>
       <textarea class="modal-textarea" placeholder="이 영화에 대한 생각을 자유롭게 표현해주세요." data-ng-model="fingo_comment">{{fingo_comment}}</textarea>
-      <button type="button" class="modal-ok-button" aria-label="Enter comment" data-ng-click="addComment(fingo_comment)">확인</button>
+      <button type="button" class="modal-ok-button" aria-label="코멘트 저장하기" data-ng-click="addComment(fingo_comment)">확인</button>
     </div>
-    <button type="button" class="modal-close-button" aria-label="Close Modal Window" data-ui-sref="main">x</button>
-    <div class="modal-rank-window" data-ng-class="dim2_class">
+    <button type="button" class="modal-close-button" aria-label="코멘트 남기기 창 닫기" data-ng-click="dim_show('hide')">x</button>
+    <div class="modal-rank-window" data-ng-class="dim2_class" data-ng-controller="FingoMovieScoreController" data-ng-mouseover="getScore($event, fingo_id)">
       <div class="dim2" data-ng-click="dim2_show('hide')"></div>
       <div class="modal-rank-contents modal">
         <h4>평가를 먼저 해주세요!</h4>
         <p class="modal-rank-desc">본 영화인가요?</p>
-        <span class="modal-stars">별별별별별</span>
+        <div data-fingo-movie-score-directive data-movie-id="fingo_id" data-movie-score="currentScore"></div>
         <p>아직 안 본 영화인가요?</p>
-        <button class="modal-like-btn" type="button" aria-label="보고싶은 영화로 등록하기">보고싶어요</button>
+        <button type="button" aria-label="보고싶은 영화로 등록하기" class="heart-btn" data-ng-click="$event.preventDefault();"><img src="./images/icon-heart.svg" class="icon">보고싶어요</button>
       </div>
     </div>
   </div>
 </div>
-<script>
-// Add comment
-// var comment_dim_el = document.querySelector('.comment-dim-container');
-// var dim_1 = comment_dim_el.querySelector('.dim');
-// var dim_2 = comment_dim_el.querySelector('.dim2');
-// var modal_rank_contents = comment_dim_el.querySelector('.modal-rank-contents');
-//
-// var modal_rank_btn = comment_dim_el.querySelector('.modal-rank-btn');
-// var modal_close_btn = comment_dim_el.querySelector('.modal-close-button');
-// var modal_ok_button = comment_dim_el.querySelector('.modal-ok-button');
-//
-// var modal_rank_contents_left = 0;
-//
-// dim_1.addEventListener('click', hideDimModal);
-// dim_2.addEventListener('click', hideDimModal);
-//
-// modal_rank_btn.addEventListener('click', function() {
-//   dim_2.style.display = 'block';
-//   modal_rank_contents.style.display = 'block';
-// });
-//
-//
-// modal_close_btn.addEventListener('click', function() {
-//   comment_dim_el.style.display = 'none';
-// });
-//
-// modal_ok_button.addEventListener('click', function(e) {
-//   if(e) { e.preventDefault(); }
-//   comment_dim_el.style.display = 'none';
-//   // 서버로 코멘트 전송
-// });
-//
-//
-// function showDimModal() {
-//   var modals = document.querySelectorAll('.modal');
-//   dim = document.querySelector('.dim');
-//   dim_2 = document.querySelector('.dim2');
-//
-//   dim.style.display = 'block';
-//   dim_2.style.display = 'block';
-//   for(var i = 0, l = modals.length; i < l; i++) {
-//     modals[i].style.display = 'block';
-//   }
-//   modal_rank_contents.style.left = (modal_rank_btn.offsetLeft - 127) + 'px';
-// };
-//
-// function hideDimModal(){
-//   var modal = this.parentNode.querySelector('.modal');
-//
-//   this.style.display = 'none';
-//   modal.style.display = 'none';
-// };
-//
-// var tabpanels = document.querySelectorAll('.hover');
-//
-// tabpanels.forEach(function(tabpanel, index) {
-//   var tabpanel_btns = tabpanel.querySelectorAll('button');
-//
-//   tabpanel_btns.forEach(function(btn, index) {
-//
-//     if(index === 0) {
-//       btn.addEventListener('click', function(e) {
-//         if(e) { e.preventDefault(); }
-//       });
-//     } else if(index === 1) {
-//       btn.addEventListener('click', function(e) {
-//         if(e) { e.preventDefault(); e.stopPropagation();}
-//
-//         var title = this.parentNode.querySelector('h3').textContent;
-//         var poster_src = this.parentNode.parentNode.querySelector('img').getAttribute('src');
-//
-//         comment_dim_el.querySelector('.modal-headline').innerHTML = this.parentNode.querySelector('h3').textContent;
-//         comment_dim_el.querySelector('.modal-poster').setAttribute('src', poster_src);
-//
-//         showDimModal();
-//       });
-//     }
-//   });
-// });
-
-</script

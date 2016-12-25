@@ -14,12 +14,13 @@ angular.module('FingoApp')
       }
     });
   }])
-  .controller('FingoBoxOfficeDetailController', ($scope, FingoBoxofficeDetail)=>{
+  .controller('FingoBoxOfficeDetailController', [ '$scope', 'FingoBoxofficeDetail', ($scope, FingoBoxofficeDetail)=>{
 
     FingoBoxofficeDetail.get(function(data) {
+      console.log(data.data);
       $scope.fingo_boxoffice_detail = data.data;
     }, function errorCallback(data) {
        console.log('e',data);
     });
 
-  });
+  }]);

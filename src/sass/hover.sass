@@ -1,0 +1,59 @@
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-config
+
+figure
+  .hover
+    +position(absolute, top 0 z-index 10)
+    +size(100%)
+    +padding(left 1.2em right 1.2em)
+    display: none
+    cursor: pointer
+    background: rgba(#000000, 0.85)
+    color: $fingo-white
+    text-align: center
+    +mobile
+      +size(100% 100%)
+    h3
+      +margin(top 55px bottom 35px)
+      +padding(bottom 1em)
+      border-bottom: 1px solid rgba($fingo-main-color, 0.4)
+      font-size: 16px
+      +mobile
+        font-size: 30px
+    .like-btn,
+    .heart-btn
+      +margin(bottom 10px left auto right auto)
+      +padding(top 5px)
+      +size(110px 35px)
+      font-size: 14px
+      display: block
+      color: #fff
+      border: 1px solid currentColor
+      letter-spacing: -1px
+      +mobile
+        +size(180px 50px)
+        font-size: 16px
+      .icon
+        +size(16px 13px)
+        +margin(right 6px)
+        +mobile
+          +size(21px 19px)
+    .heart-btn
+      &:hover,
+      &.heart-btn-active,
+      &.active
+        +background(color $fingo-heart)
+        border: 1px solid $fingo-heart
+    .like-btn
+      &:hover,
+      &:active,
+      &.like-btn-active
+        +background(color #27569c)
+        border: 1px solid #27569c
+
+  &:hover,
+  &:active,
+  &:focus
+    .hover
+      display: block

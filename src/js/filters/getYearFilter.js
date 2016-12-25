@@ -1,8 +1,6 @@
-/*! readingZeroFilter.js © yamoo9.net, 2016 */
+/*! getYearFilter.js © heoyunjee, 2016 */
 
 'use strict'
-
-// let angular = require('angular');
 
 angular.module('FingoApp').filter('getYear', function() {
   return function(input) {

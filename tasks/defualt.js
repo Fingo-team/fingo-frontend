@@ -16,7 +16,6 @@ gulp.task('default', ()=>{
     ['clean'],
     ['move-views'],
     ['html', 'sass', 'webpack', 'images'],
-    ['move-directives'],
     ['watch', 'browser-sync']
   );
   // 프로젝트 시작 메시지 출력

@@ -1,0 +1,98 @@
+<div class="stars" data-ng-click="$event.stopPropagation();">
+  <form novalidate class="star-rating-form" action="#" id="star_rating{{movieId}}">
+
+    <input value="0.5" id="star1_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star1_{{movieId}}" class="star1" data-ng-click="addScore($event, movieId, 0.5, movieScore)">
+      <span >0.5점</span>
+      <svg>
+        <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+      </svg>
+    </label>
+
+    <input value="1" id="star2_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star2_{{movieId}}" class="star2" data-ng-click="addScore($event, movieId, 1, movieScore)">
+      <span >1점</span>
+      <svg>
+        <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+      </svg>
+    </label>
+
+    <input value="1.5" id="star3_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star3_{{movieId}}" class="star3" data-ng-click="addScore($event, movieId, 1.5, movieScore)">
+      <span >1.5점</span>
+      <svg>
+        <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+      </svg>
+    </label>
+
+    <input value="2" id="star4_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star4_{{movieId}}" class="star4" data-ng-click="addScore($event, movieId, 2, movieScore)">
+      <span >2점</span>
+      <svg>
+        <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+      </svg>
+    </label>
+
+
+    <input value="2.5" id="star5_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star5_{{movieId}}" class="star5" data-ng-click="addScore($event, movieId, 2.5, movieScore)">
+      <span >2.5점</span>
+      <svg>
+        <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+      </svg>
+    </label>
+
+    <input value="6" id="star6_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star6_{{movieId}}" class="star6" data-ng-click="addScore($event, movieId, 3, movieScore)">
+      <span>3점</span>
+      <svg>
+        <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+      </svg>
+    </label>
+
+    <input value="7" id="star7_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star7_{{movieId}}" class="star7" data-ng-click="addScore($event, movieId, 3.5, movieScore)">
+      <span >3.5점</span>
+      <svg>
+        <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+      </svg>
+    </label>
+
+    <input value="8" id="star8_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star8_{{movieId}}" class="star8" data-ng-click="addScore($event, movieId, 4, movieScore)">
+      <span >4점</span>
+      <svg>
+        <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+      </svg>
+    </label>
+
+    <input value="9" id="star9_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star9_{{movieId}}" class="star9" data-ng-click="addScore($event, movieId, 4.5, movieScore)">
+      <span >4.5점</span>
+      <svg>
+        <path class="icon-star-left" d="M601,680m0,22.038L592.965,706l1.1-9.259L588,689.931l8.715-1.76L601,680" transform="translate(-588 -680)"/>
+      </svg>
+    </label>
+
+    <input value="10" id="star10_{{movieId}}"
+      type="radio" name="rating" >
+    <label for="star10_{{movieId}}" class="star10" data-ng-click="addScore($event, movieId, 5, movieScore)">
+      <span >5점</span>
+      <svg>
+        <path class="icon-star-right" d="M602,680m0,22.038L610.035,706l-1.1-9.259,6.066-6.81-8.715-1.76L602,680" transform="translate(-602 -680)"/>
+      </svg>
+    </label>
+
+    <output></output>
+
+  </form>
+</div>

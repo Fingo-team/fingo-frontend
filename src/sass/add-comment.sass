@@ -72,7 +72,7 @@ button
         +position(absolute, left 30px)
         +size(80px 115px)
       .modal-stars
-        color: $fingo-white
+        color: $fingo-main-color
       .modal-textarea
         +margin(top 10px)
         +size(100% 130px)
@@ -131,14 +131,30 @@ button
         font-size: 14px
         color: #cacaca
         font-weight: lighter
-      button
-        +size(100px 35px)
-        border: 1px solid $fingo-white
-        color: $fingo-white
-        line-height: 33px
+        &:last-of-type
+          +margin(top 10px)
+      .stars
+        +margin(0)
+
+      .heart-btn
+        +margin(bottom 10px left auto right auto)
+        +padding(top 5px)
+        +size(110px 35px)
+        font-size: 14px
+        display: block
+        color: #fff
+        border: 1px solid currentColor
+        letter-spacing: -1px
+        +mobile
+          +size(180px 50px)
+          font-size: 16px
+        .icon
+          +size(16px 13px)
+          +margin(right 6px)
+          +mobile
+            +size(21px 19px)
+        &:hover,
+        &.heart-btn-active,
         &.active
-          +background(color $fingo-heart)
-          border: 1px solid $fingo-heart
-        &:hover
           +background(color $fingo-heart)
           border: 1px solid $fingo-heart

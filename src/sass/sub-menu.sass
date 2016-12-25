@@ -1,0 +1,36 @@
+/*! Sub Menu.sass © FINGO - joeun, 2016 */
+
+@import ./config/fingo-colors
+@import ./Modules/sass/style
+@import ./config/fingo-reset
+
+.sub-menu
+  +size(100% 60px)
+  border-bottom: 1px solid $fingo-border
+  +margin(bottom 60px)
+  ul
+    li
+      float: left
+      border-left: 1px solid $fingo-border
+      border-right: 1px solid $fingo-border
+      &:nth-child(2), &:nth-child(3), &:nth-child(4)
+        border-left: none
+      &::after
+        content: ""
+        display: block
+        +size(100% 1px)
+        +background(color $fingo-main-color)
+        clear: both
+        transform: scale(0)
+        transition: all 0.3s ease-in-out
+      &:hover::after
+        transform: scale(1)
+      a
+        +size(auto 60px)
+        +padding(left 20px right 20px)
+        display: block
+        color: $fingo-font-dd
+        font-size: 14px
+        line-height: 60px
+        +mobile
+          +padding(left 10px right 10px)

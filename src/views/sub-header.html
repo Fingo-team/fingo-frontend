@@ -1,0 +1,24 @@
+<!-- header -->
+<header class="header" data-ng-controller="FingoUserDetailController">
+  <div class="profile container">
+    <section class="account">
+
+      <h1>개인 프로필</h1>
+      <div class="thumbnail">
+        <img
+        data-ng-src="{{user_detail.user_profile.user_img}}"
+        src="./images/icon-profile.svg" alt="프로필 사진">
+      </div>
+      <p>{{user_detail.user_profile.nickname}}</p>
+    </section>
+    <section class="total-movies">
+      <h1>영화 보관함</h1>
+      <strong>{{user_detail.watched_movie_cnt}}</strong>
+    </section>
+    <section class="received-likes">
+      <h1>보고싶은 영화</h1>
+      <!-- <img src="./images/icon-like.svg" alt="좋아요"> -->
+      <strong>{{user_detail.wish_movie_cnt}}</strong>
+    </section>
+  </div>
+</header>

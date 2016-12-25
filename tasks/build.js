@@ -11,8 +11,8 @@ gulp.task('build', ()=>{
 
   runSequence(
     ['clean'],
-    ['iconfonts', 'sprites'],
-    ['move-fonts', 'html', 'sass', 'webpack-build', 'images']
+    ['move-views'],
+    ['html', 'sass', 'webpack-build', 'images']
   );
   log.Y('[[ 빌드 완료 ------------- ]]');
 });

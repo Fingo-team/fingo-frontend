@@ -12,7 +12,7 @@ angular
           'height': {
             'desktop': 750,
             'tablet': 650,
-            'mobile': 600
+            'mobile': 450
           }
         };
         scope.repeatComplete = function() {

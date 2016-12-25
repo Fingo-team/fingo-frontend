@@ -1,3 +1,5 @@
+/*! sub-header.sass © FINGO - joeun, 2016 */
+
 @import ./config/fingo-colors
 @import ./Modules/sass/style
 
@@ -19,8 +21,10 @@ header
       h1
         @extend %a11y-hidden
       .thumbnail
-        img
+        >img
           +size(75px 75px)
+          border-radius: 50px
+          // border: 1px solid #ddd
       p
         font-size: 18px
         +margin(top 10px)

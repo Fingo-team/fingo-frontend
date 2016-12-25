@@ -5,18 +5,19 @@
 // * --------------------------------
 .footer
   +size(100% 150px)
+  +padding(top 40px bottom 40px)
+  box-sizing: border-box
   background: $fingo-bg-dark
   color: $fingo-white
   a
     color: $fingo-white
   .container
-    padding-top: 40px
+    position: relative
     .footer-logo
       float: left
       margin-right: 50px
     .footer-copyright
       +position(relative, top 5px)
-      width: 250px
       float: left
       p
         font-size: 14px
@@ -32,7 +33,7 @@
       display: inline-block
       background: $fingo-font-33
       border-radius: 50%
-      img
+      svg
         position: absolute
         top: 50%
         left: 50%
@@ -43,3 +44,5 @@
     .footer-sns-twitter
       &:hover
         background: #30758b
+    +mobile
+      +position(absolute, top 0 right 0)

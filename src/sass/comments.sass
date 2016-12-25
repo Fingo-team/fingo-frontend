@@ -1,4 +1,4 @@
-// fingo - nav.sass , header.sass
+/*! Comment.sass © FINGO - joeun, 2016 */
 //
 // * --------------------------------
 // * RESET
@@ -30,180 +30,110 @@ button
 main
   +padding(bottom 200px)
   .sub-menu
-    +size(100% 60px)
-    border-bottom: 1px solid $fingo-border
     ul
       li
-        float: left
-        border-left: 1px solid $fingo-border
-        border-right: 1px solid $fingo-border
-
-        &:nth-child(2), &:nth-child(3), &:nth-child(4)
-          border-left: none
-
-        &::after
-          content: ""
-          display: block
-          +size(100% 1px)
-          +background(color $fingo-main-color)
-          clear: both
-          transform: scale(0)
-          transition: all 0.3s
         &:nth-child(4)::after
           transform: scale(1)
-        &:hover::after
-          transform: scale(1)
-
-        a
-          +size(auto 60px)
-          +padding(left 20px right 20px)
-          display: block
-          color: $fingo-font-dd
-          font-size: 14px
-          line-height: 60px
 
 .movies
   +margin(top 60px)
-
-
   h1
     @extend %a11y-hidden
   .movie-list
     +tablet
-      +size(736px auto)
+      width: percentage($t-container-width/$bp-tablet)
       +margin(0 auto)
     +mobile
-      +size(350px auto)
+      width: percentage($m-container-width/$bp-mobile)
       +margin(0 auto)
     &::after
       content: ""
       display: block
       clear: both
 
-    figure
-      float: left
-      +margin( bottom 20px)
-      transition: 0.3s all
-      position: relative
-
-      +mobile
-        background-color: pink
-        +margin(right 20px auto)
-        +size(350px 500px)
-
-      img
-        +size(200px 300px)
-        +mobile
-          +size(350px 500px)
-
-      .hover
-        +position(absolute, top 0 z-index 10)
-        +size(100% 100%)
-        opacity: 0
-        cursor: pointer
-        background: rgba(#000000, 0.3)
-        text-align: center
-        p
-          +margin(top 55px)
-          font-size: 16px
-          color: $fingo-white
-          +mobile
-            font-size: 20px
-            +margin(top 90px)
 
 
-        button
-          +margin(bottom 10px left auto right auto)
-          +size(110px 35px)
-          font-size: 14px
-          display: block
-          color: #fff
-          border: 1px solid currentColor
-          letter-spacing: -1px
-          +mobile
-            +size(180px 50px)
-            font-size: 16px
-          img:first-child
-            +size(16px 13px)
-            +margin(right 5px)
-            +mobile
-              +size(21px 19px)
-
-
-
-          &:nth-of-type(1):hover,
-          &:nth-of-type(1):active
-            +background(color $fingo-heart)
-            border: 1px solid $fingo-heart
-          &:nth-of-type(2):hover,
-          &:nth-of-type(2):active
-            +background(color #27569c)
-            border: 1px solid #27569c
-
-      &:hover
-        .hover
-          opacity: 1
-
-.comment-box
-  +margin(right 20px bottom 20px)
-  position: relative
+.user-comment
+  +margin(right 20px bottom 25px)
+  +size(600px 358px)
+  +background(color #222)
   float: left
-  color: $fingo-white
-  +size(200px 300px)
-  background-color: #222
-  +padding(top 30px left 25px right 25px)
-  box-sizing: border-box
-  +tablet
-    +margin(right 0)
-  .movie-comment
-    h2
-      font-size: 16px
-      +margin(bottom 6px)
-    .info
-      font-size: 12px
-      color: $fingo-font-dd
-  .rating-stars
-    font-size: 10px
-    +margin(top 5px bottom 15px)
-
-  .comment
-    color: $fingo-font-dd
-    p
-      font-size: 12px
-    time
-      font-size: 10px
-  .received-likes
-    +margin(top 70px right 30px)
+  +mobile
+    +size(100% auto)
+  figure
+    +size(250px auto)
+    +margin(bottom 20px)
+    position: relative
     float: left
-    // +position(absolute, top 0 left 0)
-    strong
-      font-weight: normal
-      font-size: 14px
+    +mobile
+      +margin(right 20px auto)
+      +size(100% auto)
     img
-      +margin(top 6px)
-  button
+      +size(100% auto)
+    .hover
+      h3
+        +margin(top 65px)
+        font-size: 18px
 
-    border: 1px solid #777
-    color: #777
-    font-size: 12px
-    +margin(top 70px )
-    +padding(5px 5px)
-  button:hover
-    border: 1px solid #fff
-    color: $fingo-white
-// .comment-box:nth-child(5n)
-//   margin-right: 0px
-//   +tablet
-//     .comment-box:nth-child(2n)
-//       margin-right: 0px
-.comment-box
-  margin-right: 20px
-.comment-box:nth-child(6n)
-  margin-right: 0px
-  +tablet
-    .comment-box:nth-child(4n)
-      margin-right: 0px
-.stars
-  +margin(bottom 30px)
-  // +background(color #333)
+  .comment-box
+    position: relative
     float: left
+    color: $fingo-white
+    +size(350px 360px)
+    +padding(top 30px left 30px right 30px)
+    box-sizing: border-box
+    +tablet
+      +margin(right 0)
+    +mobile
+      +size(100%)
+      +padding(top 10px bottom 20px)
+    h2
+      +margin(bottom 6px)
+      width: 80%
+      font-size: 18px
+      +mobile
+        display: none
+    .rating-stars
+      +margin(top 10px bottom 30px)
+      font-size: 12px
+      +mobile
+        display: none
+    .comment
+      font-size: 15px
+      color: $fingo-font-dd
+      +mobile
+        +padding(top 10px)
+        +size(100% 150px)
+    time
+      +position(absolute, bottom 30px left 30px)
+      font-weight: lighter
+      font-size: 13px
+      color: $fingo-font-dd
+    .received-likes
+      +position(absolute, top 30px right 30px)
+      color: $fingo-font-dd
+      h4
+        @extend %a11y
+      strong
+        font-weight: normal
+        font-size: 14px
+      img
+        +margin(top 6px)
+      +mobile
+        top: 0
+    button
+      +position(absolute, bottom 30px right 30px)
+      +padding(5px 5px)
+      border: 1px solid #777
+      color: #777
+      font-size: 12px
+    button:hover
+      border: 1px solid #fff
+      color: $fingo-white
+  .pagenation
+    text-align: center
+    button
+      +padding(top 7px)
+      color: $fingo-font-ad
+      text-transform: uppercase
+      border: 1px solid currentColor
